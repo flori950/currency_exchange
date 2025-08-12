@@ -1,13 +1,27 @@
 {
   "name": "currencychange",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": {
+    "name": "Florian Jäger",
+    "url": "https://florian-hunter.de",
+    "github": "https://github.com/flroi950"
+  },
+  "description": "Modern Currency Converter with Apple Glass Design - Real-time exchange rates, historical charts, and responsive UI",
+  "keywords": ["currency", "converter", "exchange-rates", "react", "typescript", "glassmorphism"],
+  "homepage": "https://currencyexchange.florian-hunter.de",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flroi950/currency_exchange.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:ftp": "npm run build && node scripts/deploy-ftp.js",
+    "deploy:build": "npm run build"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
@@ -22,6 +36,7 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "basic-ftp": "^5.0.5",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",

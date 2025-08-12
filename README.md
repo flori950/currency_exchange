@@ -1,136 +1,189 @@
 # Currency Converter App
 
-Eine moderne React 19 + TypeScript Currency Converter Anwendung mit Apple Glass Design, Real-time Währungsumrechnung, historischen Charts und vielen weiteren Features.
+A modern React 19 + TypeScript Currency Converter application with Apple Glass Design, real-time currency conversion, historical charts, and many additional features.
+
+**🌐 Live Demo:** [currencyexchange.florian-hunter.de](https://currencyexchange.florian-hunter.de)
+
+**👨‍💻 Developed by:** [Florian Jäger](https://florian-hunter.de) | [GitHub](https://github.com/flroi950)
 
 ## ✨ Features
 
-### 🌍 Währungsumrechnung
-- **Real-time Umrechnung** mit 150+ unterstützten Währungen
-- **exchangerate.host API** für aktuelle Wechselkurse
-- **Rate Limiting** (2-Sekunden-Intervalle) zum Schutz vor API-Missbrauch
-- **Caching System** (1-Minute Cache) für optimierte Performance
-- **Error Handling** mit AbortSignal-Timeouts und Fallback-Raten
-- **Anti-Loop-Schutz** für API-Aufrufe
+### 🌍 Currency Conversion
+- **Real-time conversion** with 150+ supported currencies
+- **exchangerate.host API** for current exchange rates
+- **Rate limiting** (2-second intervals) to prevent API abuse
+- **Caching system** (1-minute cache) for optimized performance
+- **Error handling** with AbortSignal timeouts and fallback rates
+- **Anti-loop protection** for API calls
 
 ### 🎨 Design & UI
-- **Apple Glass Design** mit Glassmorphismus-Effekten
-- **backdrop-filter CSS** für authentische Glas-Optik
-- **Dark/Light Mode Toggle** mit vollständiger Themenunterstützung
-- **Responsive Design** optimiert für Mobile, Tablet und Desktop
-- **Hervorragende Dark-Mode-Sichtbarkeit**
-- **Smooth Animationen** und Übergänge
+- **Apple Glass Design** with glassmorphism effects
+- **backdrop-filter CSS** for authentic glass appearance
+- **Dark/Light mode toggle** with complete theme support
+- **Responsive design** optimized for Mobile, Tablet, and Desktop
+- **Excellent dark mode visibility**
+- **Smooth animations** and transitions
 
-### 📊 Interaktive Features
-- **Historische Charts** mit Chart.js Visualisierung (30 Tage)
-- **Eingebauter Taschenrechner** für komplexe Berechnungen
-- **Währungen tauschen** mit animiertem Button
-- **Toast-Benachrichtigungssystem** für Benutzer-Feedback
-- **Dropdown-Menüs** mit Suche für Währungsauswahl
+### 📊 Interactive Features
+- **Historical charts** with Chart.js visualization (30 days)
+- **Built-in calculator** for complex calculations
+- **Currency swap** with animated button
+- **Toast notification system** for user feedback
+- **Dropdown menus** with search for currency selection
 
-### ⚙️ Technische Features
-- **SEO-Optimierung** mit React Helmet für Meta-Tags
-- **TypeScript** mit strikter Typisierung
-- **Vite** als Build-Tool mit Hot Module Replacement
-- **Lucide Icons** für moderne Icon-Bibliothek
-- **CSS Custom Properties** für Glassmorphismus
-- **Funktionale Settings-Buttons** mit Dropdown-Menüs
+### ⚙️ Technical Features
+- **SEO optimization** with React Helmet for meta tags
+- **TypeScript** with strict typing
+- **Vite** as build tool with Hot Module Replacement
+- **Lucide Icons** for modern icon library
+- **CSS Custom Properties** for glassmorphism
+- **Functional settings buttons** with dropdown menus
+
+### 🚀 Deployment & DevOps
+- **FTP Deployment** - Automated deployment to FTP server
+- **GitHub Actions** - CI/CD pipeline for automatic deployments
+- **Renovate Integration** - Automatic dependency updates
+- **Manual Deployment Script** - Simple local FTP uploads
+- **Environment Configuration** - Secure credential management
 
 ## 🛠 Tech Stack
 
-- **React 19** - Moderne React-Features
-- **TypeScript** - Typsicherheit und bessere DX
-- **Vite** - Schneller Build-Tool und Dev-Server
-- **Chart.js** + **react-chartjs-2** - Interaktive Charts
-- **Lucide React** - Moderne Icon-Bibliothek
-- **React Helmet Async** - SEO und Meta-Tags
-- **CSS Custom Properties** - Native CSS-Variablen für Theming
+- **React 19** - Modern React features
+- **TypeScript** - Type safety and better DX
+- **Vite** - Fast build tool and dev server
+- **Chart.js** + **react-chartjs-2** - Interactive charts
+- **Lucide React** - Modern icon library
+- **React Helmet Async** - SEO and meta tags
+- **CSS Custom Properties** - Native CSS variables for theming
 
 ## 🚀 Getting Started
 
-### Voraussetzungen
+### Prerequisites
 - Node.js 18+ 
-- npm oder yarn
+- npm or yarn
 
 ### Installation
 ```bash
-# Repository klonen oder herunterladen
+# Clone or download repository
 cd currencychange
 
-# Dependencies installieren
+# Install dependencies
 npm install
 
-# Development server starten
+# Start development server
 npm run dev
 ```
 
-Die App läuft dann unter `http://localhost:5173` (oder einem anderen Port falls 5173 belegt ist).
+The app will run at `http://localhost:5173` (or another port if 5173 is occupied).
 
-### Build für Production
+### Build for Production
 ```bash
-# Production Build erstellen
+# Create production build
 npm run build
 
-# Preview des Production Builds
+# Preview production build
 npm run preview
+
+# FTP Deployment
+npm run deploy:ftp
 ```
 
-## 📱 Verwendung
+## 🚀 Deployment
 
-### Grundlegende Währungsumrechnung
-1. **Ausgangswährung** auswählen (From)
-2. **Betrag** eingeben
-3. **Zielwährung** auswählen (To)
-4. **Ergebnis** wird automatisch angezeigt
+### FTP Server Deployment
 
-### Taschenrechner verwenden
-1. **Taschenrechner-Icon** in der Header-Leiste klicken
-2. **Berechnung** durchführen
-3. **"Use" Button** klicken um Ergebnis zu übernehmen
+#### Automatic via GitHub Actions
+1. **Configure GitHub Secrets**:
+   - `FTP_SERVER`: Your FTP server hostname
+   - `FTP_USERNAME`: Your FTP username  
+   - `FTP_PASSWORD`: Your FTP password
 
-### Historische Charts anzeigen
-1. **Chart-Icon** in der Header-Leiste klicken
-2. **30-Tage-Verlauf** des Wechselkurses anzeigen
-3. **Interaktive Tooltips** beim Hover über Datenpunkte
+2. **Push to master** triggers automatic deployment
+
+#### Manual via Script
+1. **Set environment variables**:
+   ```bash
+   # Create .env.local with:
+   FTP_HOST=your-ftp-server.com
+   FTP_USER=your-username
+   FTP_PASS=your-password
+   FTP_DIR=/currency_exchange
+   ```
+
+2. **Execute deployment**:
+   ```bash
+   npm run deploy:ftp
+   ```
+
+### Dependency Management
+
+**Renovate** automatically keeps all dependencies up to date:
+- **Weekly updates** every Monday
+- **Automatic security patches**
+- **Grouped updates** for related packages
+- **Pull requests** for review before merge
+
+**Setup**: Install the [Renovate GitHub App](https://github.com/apps/renovate) for your repository.
+
+Find more details in the [DEPLOYMENT.md](DEPLOYMENT.md) documentation.
+
+## 📱 Usage
+
+### Basic Currency Conversion
+1. **Select source currency** (From)
+2. **Enter amount**
+3. **Select target currency** (To)
+4. **Result** is displayed automatically
+
+### Using the Calculator
+1. **Click calculator icon** in the header bar
+2. **Perform calculation**
+3. **Click "Use" button** to transfer result
+
+### Viewing Historical Charts
+1. **Click chart icon** in the header bar
+2. **View 30-day history** of exchange rate
+3. **Interactive tooltips** on hover over data points
 
 ### Settings & Themes
-1. **Settings-Icon** klicken für Dropdown-Menü
-2. **Dark/Light Mode** umschalten
-3. **Cache leeren** bei Bedarf
-4. **Cache-Status** und letzte Aktualisierung einsehen
+1. **Click settings icon** for dropdown menu
+2. **Toggle dark/light mode**
+3. **Clear cache** when needed
+4. **View cache status** and last update time
 
-## 🎯 Besondere Features
+## 🎯 Special Features
 
-### Anti-Loop-Schutz
-- Verhindert übermäßige API-Aufrufe durch intelligentes Rate Limiting
-- Debouncing bei Benutzereingaben (500ms)
+### Anti-Loop Protection
+- Prevents excessive API calls through intelligent rate limiting
+- Debouncing on user input (500ms)
 
-### Glassmorphismus Design
-- Authentisches Apple Glass Design mit backdrop-filter
-- Subtile Transparenz und Unschärfe-Effekte
-- Responsive Glas-Elemente für alle Komponenten
+### Glassmorphism Design
+- Authentic Apple Glass design with backdrop-filter
+- Subtle transparency and blur effects
+- Responsive glass elements for all components
 
-### Robuste Error Handling
-- Graceful Fallbacks bei API-Fehlern
-- Toast-Notifications für Benutzer-Feedback
-- Offline-Fallback-Raten für wichtige Währungen
+### Robust Error Handling
+- Graceful fallbacks on API errors
+- Toast notifications for user feedback
+- Offline fallback rates for major currencies
 
-### Performance Optimierung
-- Intelligent Caching mit 1-Minute Lebensdauer
-- Lazy Loading von historischen Daten
-- Optimierte Bundle-Größe durch Code-Splitting
+### Performance Optimization
+- Intelligent caching with 1-minute lifetime
+- Lazy loading of historical data
+- Optimized bundle size through code-splitting
 
 ## 🌐 API
 
-Die App verwendet die **exchangerate.host API** für aktuelle Wechselkurse:
-- Kostenlos und ohne API-Key
-- Unterstützt 150+ Währungen
-- Historische Daten verfügbar
-- Hohe Verfügbarkeit und Zuverlässigkeit
+The app uses the **exchangerate.host API** for current exchange rates:
+- Free and without API key
+- Supports 150+ currencies
+- Historical data available
+- High availability and reliability
 
-## 📄 Lizenz
+## 📄 License
 
-MIT License - siehe [LICENSE](LICENSE) Datei für Details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Entwickelt mit ❤️ und modernen Web-Technologien**
+**Developed with ❤️ and modern web technologies**

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://currencyexchange.florian-hunter.de/sitemap.xml

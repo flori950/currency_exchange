@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.25);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Background pattern -->
+  <pattern id="dots" patternUnits="userSpaceOnUse" width="40" height="40">
+    <circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  
+  <!-- Main card with glassmorphism -->
+  <rect x="100" y="100" width="1000" height="430" rx="24" fill="url(#cardGradient)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  
+  <!-- Currency symbols background -->
+  <text x="150" y="200" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="rgba(255,255,255,0.1)">$</text>
+  <text x="1000" y="200" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="rgba(255,255,255,0.1)">€</text>
+  <text x="150" y="450" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="rgba(255,255,255,0.1)">£</text>
+  <text x="1000" y="450" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="rgba(255,255,255,0.1)">¥</text>
+  
+  <!-- Main content -->
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="white" text-anchor="middle">Currency Converter</text>
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.9)" text-anchor="middle">Real-time Exchange Rates with Apple Glass Design</text>
+  
+  <!-- Features -->
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">150+ Currencies • Historical Charts • Mobile Responsive</text>
+  
+  <!-- Author -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle">Created by Florian Jäger</text>
+  
+  <!-- URL -->
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="white" text-anchor="middle">currencyexchange.florian-hunter.de</text>
+  
+  <!-- Exchange arrow -->
+  <path d="M500 315 L520 305 L520 310 L580 310 L580 305 L600 315 L580 325 L580 320 L520 320 L520 325 Z" fill="white" opacity="0.8"/>
+</svg>

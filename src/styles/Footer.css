@@ -1,0 +1,121 @@
+.app-footer {
+  margin-top: 2rem;
+  padding: 1.5rem 1rem 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+  border-radius: 16px 16px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  position: relative;
+}
+
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--glass-bg);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-author {
+  display: flex;
+  align-items: center;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+}
+
+.footer-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .footer-link {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .footer-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .app-footer {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .footer-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}

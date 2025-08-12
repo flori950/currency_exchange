@@ -11,6 +11,7 @@ import { CurrencySelector } from './components/CurrencySelector';
 import { Calculator } from './components/Calculator';
 import { CurrencyChart } from './components/CurrencyChart';
 import { ToastContainer } from './components/Toast';
+import Footer from './components/Footer';
 import './styles/global.css';
 import './App.css';
 
@@ -188,16 +189,21 @@ function App() {
     <HelmetProvider>
       <div className="app">
         <Helmet>
-          <title>Currency Converter - Real-time Exchange Rates</title>
-          <meta name="description" content="Convert currencies with real-time exchange rates. Features include historical charts, calculator, dark mode, and support for 150+ currencies." />
-          <meta name="keywords" content="currency converter, exchange rates, forex, money converter, real-time rates" />
-          <meta name="author" content="Currency Converter App" />
-          <meta property="og:title" content="Currency Converter - Real-time Exchange Rates" />
-          <meta property="og:description" content="Convert currencies with real-time exchange rates and historical charts" />
+          <title>Currency Converter - Real-time Exchange Rates | Florian Jäger</title>
+          <meta name="description" content="Modern currency converter with Apple Glass design by Florian Jäger. Get real-time exchange rates for 150+ currencies, interactive historical charts, and seamless mobile experience." />
+          <meta name="keywords" content="currency converter, exchange rates, forex, money converter, real-time rates, glassmorphism, Apple design, React app, Florian Jäger" />
+          <meta name="author" content="Florian Jäger" />
+          <meta property="og:title" content="Currency Converter - Real-time Exchange Rates | Florian Jäger" />
+          <meta property="og:description" content="Modern currency converter with Apple Glass design. Get real-time exchange rates for 150+ currencies with interactive charts." />
           <meta property="og:type" content="website" />
-          <meta name="twitter:card" content="summary" />
+          <meta property="og:url" content="https://currencyexchange.florian-hunter.de/" />
+          <meta property="og:image" content="https://currencyexchange.florian-hunter.de/og-image.png" />
+          <meta property="og:site_name" content="Currency Converter by Florian Jäger" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Currency Converter - Real-time Exchange Rates" />
-          <meta name="twitter:description" content="Convert currencies with real-time exchange rates and historical charts" />
+          <meta name="twitter:description" content="Modern currency converter with Apple Glass design. Get real-time exchange rates for 150+ currencies." />
+          <meta name="twitter:image" content="https://currencyexchange.florian-hunter.de/og-image.png" />
+          <link rel="canonical" href="https://currencyexchange.florian-hunter.de/" />
         </Helmet>
 
         <ToastContainer toasts={toast.toasts} onClose={toast.removeToast} />
@@ -475,14 +481,7 @@ function App() {
           )}
         </main>
 
-        <footer className="app-footer">
-          <p>
-            Exchange rates provided by{' '}
-            <a href="https://exchangerate.host" target="_blank" rel="noopener noreferrer">
-              exchangerate.host
-            </a>
-          </p>
-        </footer>
+        <Footer />
       </div>
     </HelmetProvider>
   );

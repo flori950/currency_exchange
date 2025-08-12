@@ -1,0 +1,57 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":automergeDigest",
+    ":automergePatch"
+  ],
+  "schedule": ["before 6am on monday"],
+  "timezone": "Europe/Berlin",
+  "labels": ["dependencies"],
+  "assignees": ["flori950"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "groupName": "TypeScript definitions",
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^eslint"],
+      "groupName": "ESLint packages",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["react", "react-dom"],
+      "groupName": "React core",
+      "schedule": ["before 6am on saturday"],
+      "automerge": false
+    },
+    {
+      "matchPackageNames": ["vite"],
+      "groupName": "Vite",
+      "automerge": false
+    },
+    {
+      "matchPackageNames": ["typescript"],
+      "groupName": "TypeScript",
+      "automerge": false
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on sunday"]
+  },
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 2,
+  "commitMessagePrefix": "chore(deps):",
+  "commitMessageAction": "update",
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "to {{newValue}}",
+  "platformAutomerge": false
+}
