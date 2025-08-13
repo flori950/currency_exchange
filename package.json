@@ -9,7 +9,14 @@
     "github": "https://github.com/flroi950"
   },
   "description": "Modern Currency Converter with Apple Glass Design - Real-time exchange rates, historical charts, and responsive UI",
-  "keywords": ["currency", "converter", "exchange-rates", "react", "typescript", "glassmorphism"],
+  "keywords": [
+    "currency",
+    "converter",
+    "exchange-rates",
+    "react",
+    "typescript",
+    "glassmorphism"
+  ],
   "homepage": "https://currencyexchange.florian-hunter.de",
   "repository": {
     "type": "git",
@@ -28,8 +35,7 @@
     "lucide-react": "^0.539.0",
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.0",
-    "react-dom": "^19.1.1",
-    "react-helmet-async": "^2.0.5"
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

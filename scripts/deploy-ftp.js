@@ -10,7 +10,7 @@
  *   FTP_HOST     - FTP server hostname
  *   FTP_USER     - FTP username
  *   FTP_PASS     - FTP password
- *   FTP_DIR      - Remote directory (optional, defaults to root)
+ *   FTP_DIR      - Remote directory (defaults to /currency_exchange)
  */
 
 const ftp = require('basic-ftp');

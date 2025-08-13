@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ArrowRightLeft, Calculator as CalculatorIcon, TrendingUp, Settings, Sun, Moon, Palette, Info, Paintbrush, RotateCcw } from 'lucide-react';
 import type { Currency, HistoricalRate, ChartTimePeriod } from './types';
 import { ALL_CURRENCIES, POPULAR_CURRENCIES, CHART_TIME_PERIODS } from './constants/currencies';
@@ -11,6 +10,7 @@ import { CurrencySelector } from './components/CurrencySelector';
 import { Calculator } from './components/Calculator';
 import { CurrencyChart } from './components/CurrencyChart';
 import { ToastContainer } from './components/Toast';
+import { DynamicMeta } from './components/DynamicMeta';
 import Footer from './components/Footer';
 import './styles/global.css';
 import './App.css';
@@ -100,6 +100,7 @@ function App() {
     try {
       await loadHistoricalData();
     } catch (error) {
+      console.error('Historical data error:', error);
       toastRef.current.error('Failed to load chart data');
     }
   }, [loadHistoricalData]);
@@ -185,28 +186,18 @@ function App() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [showCalculator, showChart, showSettings, toggleTheme, swapCurrencies]);
 
-  return (
-    <HelmetProvider>
-      <div className="app">
-        <Helmet>
-          <title>Currency Converter - Real-time Exchange Rates | Florian Jäger</title>
-          <meta name="description" content="Modern currency converter with Apple Glass design by Florian Jäger. Get real-time exchange rates for 150+ currencies, interactive historical charts, and seamless mobile experience." />
-          <meta name="keywords" content="currency converter, exchange rates, forex, money converter, real-time rates, glassmorphism, Apple design, React app, Florian Jäger" />
-          <meta name="author" content="Florian Jäger" />
-          <meta property="og:title" content="Currency Converter - Real-time Exchange Rates | Florian Jäger" />
-          <meta property="og:description" content="Modern currency converter with Apple Glass design. Get real-time exchange rates for 150+ currencies with interactive charts." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://currencyexchange.florian-hunter.de/" />
-          <meta property="og:image" content="https://currencyexchange.florian-hunter.de/og-image.png" />
-          <meta property="og:site_name" content="Currency Converter by Florian Jäger" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Currency Converter - Real-time Exchange Rates" />
-          <meta name="twitter:description" content="Modern currency converter with Apple Glass design. Get real-time exchange rates for 150+ currencies." />
-          <meta name="twitter:image" content="https://currencyexchange.florian-hunter.de/og-image.png" />
-          <link rel="canonical" href="https://currencyexchange.florian-hunter.de/" />
-        </Helmet>
+  const dynamicTitle = `Currency Converter - ${fromCurrency.code} to ${toCurrency.code} | Florian Jäger`;
+  const dynamicDescription = `Convert ${fromCurrency.name} (${fromCurrency.code}) to ${toCurrency.name} (${toCurrency.code}) with real-time exchange rates. Get ${amount} ${fromCurrency.code} = ${convertedAmount} ${toCurrency.code} instantly with our Apple Glass design currency converter.`;
+  const dynamicKeywords = `${fromCurrency.code} to ${toCurrency.code}, ${fromCurrency.name} ${toCurrency.name} exchange rate, currency converter, forex rates, ${fromCurrency.code}${toCurrency.code} rate`;
 
-        <ToastContainer toasts={toast.toasts} onClose={toast.removeToast} />
+  return (
+    <div className="app">
+      <DynamicMeta 
+        title={dynamicTitle}
+        description={dynamicDescription}
+        keywords={dynamicKeywords}
+      />
+      <ToastContainer toasts={toast.toasts} onClose={toast.removeToast} />
 
         <header className="app-header">
           <div className="app-header-content">
@@ -483,8 +474,7 @@ function App() {
 
         <Footer />
       </div>
-    </HelmetProvider>
-  );
-}
+    );
+  }
 
-export default App;
+  export default App;

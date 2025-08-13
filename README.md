@@ -32,7 +32,7 @@ A modern React 19 + TypeScript Currency Converter application with Apple Glass D
 - **Dropdown menus** with search for currency selection
 
 ### ⚙️ Technical Features
-- **SEO optimization** with React Helmet for meta tags
+- **SEO optimization** with native React document management
 - **TypeScript** with strict typing
 - **Vite** as build tool with Hot Module Replacement
 - **Lucide Icons** for modern icon library
@@ -53,7 +53,7 @@ A modern React 19 + TypeScript Currency Converter application with Apple Glass D
 - **Vite** - Fast build tool and dev server
 - **Chart.js** + **react-chartjs-2** - Interactive charts
 - **Lucide React** - Modern icon library
-- **React Helmet Async** - SEO and meta tags
+- **Native SEO** - Custom document title management
 - **CSS Custom Properties** - Native CSS variables for theming
 
 ## 🚀 Getting Started

@@ -45,6 +45,7 @@ This document explains how to deploy the Currency Converter app to florian-hunte
    - Push to `master` branch triggers automatic deployment to `/currency_exchange/` folder
    - Manual deployment via GitHub Actions tab → "Deploy to FTP Server" → "Run workflow"
    - Site will be live at: https://currencyexchange.florian-hunter.de
+   - **Note**: The workflow uses `--legacy-peer-deps` to handle React 19 compatibility
 
 ## 🔄 Renovate Dependency Management
 
