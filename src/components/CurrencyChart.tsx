@@ -176,7 +176,7 @@ export const CurrencyChart: React.FC<CurrencyChartProps> = ({
         callbacks: {
           label: function(context) {
             const value = context.parsed.y;
-            return `1 ${fromCurrency} = ${value.toFixed(4)} ${toCurrency}`;
+            return `1 ${fromCurrency} = ${value?.toFixed(4) || 'N/A'} ${toCurrency}`;
           },
         },
       },
