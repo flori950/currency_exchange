@@ -32,3 +32,4 @@ ftp-deploy.log
 *.njsproj
 *.sln
 *.sw?
+*.nvmrc
